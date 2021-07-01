@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controller;
-
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 
@@ -12,7 +12,8 @@ class PageController
      */
 
   public function home(){
-     var_dump("acceuil");die;
+      //retourne une reponse http valide
+      return new Response('home');
   }
 
     /**
@@ -20,6 +21,7 @@ class PageController
      */
 
   public function mention(){
-      var_dump('mention legale');die;
+      //retourne une reponse http valide
+      return new Response('mention-legales');
   }
 }
