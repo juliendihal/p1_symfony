@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -12,8 +13,16 @@ class PageController
      */
 
   public function home(){
-      //retourne une reponse http valide
-      return new Response('home');
+
+    $request = Request::createFromGlobals();
+    $sent = $request->query->get('sent');
+
+    if($sent === 'yes'){
+        return new Response('merci pour le formulaire');
+    }else{
+        return new Response('formulaire');
+    }
+
   }
 
     /**
