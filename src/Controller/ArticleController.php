@@ -15,72 +15,70 @@ class ArticleController extends AbstractController
 
  public function listeArticle()
  {
-     $articles =
-         [
-             '1' =>
-                 [
-                     "title" => "la vaccination c'est genial",
-                     "content" => "blablabla",
-                     "id" => 1
-                 ],
-         '2' =>
-                 [
-                     "title" => "le cheval c'est trop genial",
-                     "content" => "blablabla",
-                     "id" => 2
-                 ],
-         '3' =>
-                 [
-                     "title" => "le cheval c'est nul ",
-                     "content" => "blablabla",
-                     "id" => 3
-                 ]
+        $articles =
+            [
+                '1' =>
+                     [
+                         "title" => "la vaccination c'est genial",
+                         "content" => "blablabla",
+                         "id" => 1
+                     ],
+                '2' =>
+                     [
+                         "title" => "le cheval c'est trop genial",
+                         "content" => "blablabla",
+                         "id" => 2
+                     ],
+                '3' =>
+                     [
+                         "title" => "le cheval c'est nul ",
+                         "content" => "blablabla",
+                         "id" => 3
+                     ]
 
-     ];
-    return $this->render('articlelist.html.twig',[
-      'articles'=> $articles
-    ]);
-     //retourne une reponse http valide
-     return new Response('article');
+            ];
+                ////COMPILE LE FICHIER TWIG
+             return $this->render('articlelist.html.twig',[
+                   // RENVOI LES VARIABLES AU FICHIER TWIG
+                'articles'=> $articles
+             ]);
+
+
  }
     /**
      * @Route("/article/{id}", name="articlshow")
      */
  public function articleShow($id)
  {
-     $articles =
-         [
-             '1' =>
-                 [
-                     "title" => "la vaccination c'est genial",
-                     "content" => "blablabla",
-                     "id" => 1
-                 ],
-             '2' =>
-                 [
-                     "title" => "le cheval c'est trop genial",
-                     "content" => "blablabla",
-                     "id" => 2
-                 ],
-             '3' =>
-                 [
-                     "title" => "le cheval c'est nul ",
-                     "content" => "blablabla",
-                     "id" => 3
-                 ]
+        $articles =
+            [
+                 '1' =>
+                     [
+                         "title" => "la vaccination c'est genial",
+                         "content" => "blablabla",
+                         "id" => 1
+                     ],
+                 '2' =>
+                     [
+                         "title" => "le cheval c'est trop genial",
+                         "content" => "blablabla",
+                         "id" => 2
+                     ],
+                 '3' =>
+                     [
+                         "title" => "le cheval c'est nul ",
+                         "content" => "blablabla",
+                         "id" => 3
+                     ]
 
-         ];
+            ];
+                //COMPILE LE FICHIER TWIG
+             return $this->render('articleshow.html.twig', [
+                 // RENVOI LES VARIABLES AU FICHIER TWIG
+                'article' => $articles[$id]
+            ]);
 
-     return $this->render('articleshow.html.twig', [
-         'article' => $articles[$id]
-     ]);
 
-//if(array_key_exists($id , $articles)){
-
-
-//}else{
- //   return $this->redirectToRoute("home");
-//}
 
 
 

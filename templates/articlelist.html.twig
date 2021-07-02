@@ -8,7 +8,9 @@
     <title>Document</title>
 </head>
 <body>
+<!-- {//% boucle , condition .. %} -->
 {% for article in articles %}
+    <!-- {//{ placer la variable  }} -->
     <h1>{{ article.title }}</h1>
     <p>{{ article.content }}</p>
     <em>{{ article.id }}</em>
