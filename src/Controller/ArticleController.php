@@ -42,6 +42,7 @@ $article = [
 ];
 
 $article = $article[$id];
- return new Response( $article['title']);
+$concat = "titre : " . $article['title'] . "<br>" . "contenu : " . $article['content'] . "<br>" . "id : " . $article['id'];
+ return new Response( $concat);
  }
 }
