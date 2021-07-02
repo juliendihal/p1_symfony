@@ -7,7 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
-class ArticleController
+class ArticleController extends AbstractController
 {
     /**
      * @Route("/articlelist", name="articlelist")
@@ -22,7 +22,7 @@ class ArticleController
      */
  public function articleShow($id)
  {
-$article = [
+$articles = [
     '1' => [
        "title" => "la vaccination c'est genial",
         "content" => "blablabla",
@@ -41,8 +41,18 @@ $article = [
 
 ];
 
-$article = $article[$id];
-$concat = "titre : " . $article['title'] . "<br>" . "contenu : " . $article['content'] . "<br>" . "id : " . $article['id'];
- return new Response( $concat);
+
+
+if(array_key_exists($id , $articles)){
+    $article = $articles[$id];
+    $concat = "titre : " . $article['title'] . "<br>" . "contenu : " . $article['content'] . "<br>" . "id : " . $article['id'];
+    return new Response($concat);
+
+}else{
+    return $this->redirectToRoute("home");
+}
+
+
+
  }
 }
