@@ -9,7 +9,26 @@
     <link rel="stylesheet" href="{{ asset('style.css') }}">
 </head>
 <body>
-<div class="header"></div>
+<div class="header">
+    <div>
+       <h1 class="logo">symfony</h1>
+    </div>
+
+    <div>
+        <ul>
+            <li>ACCUEIL</li>
+            <li>DOC</li>
+            <li>ABOUT</li>
+        </ul>
+        <div class="burger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+
+</div>
 <div class="container">
 <!-- {//% boucle , condition .. %} -->
 {% for article in articles %}
