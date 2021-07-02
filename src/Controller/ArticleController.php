@@ -12,8 +12,34 @@ class ArticleController extends AbstractController
     /**
      * @Route("/articlelist", name="articlelist")
      */
+
  public function listeArticle()
  {
+     $articles =
+         [
+             '1' =>
+                 [
+                     "title" => "la vaccination c'est genial",
+                     "content" => "blablabla",
+                     "id" => 1
+                 ],
+         '2' =>
+                 [
+                     "title" => "le cheval c'est trop genial",
+                     "content" => "blablabla",
+                     "id" => 2
+                 ],
+         '3' =>
+                 [
+                     "title" => "le cheval c'est nul ",
+                     "content" => "blablabla",
+                     "id" => 3
+                 ]
+
+     ];
+    return $this->render('articlelist.html.twig',[
+      'articles'=> $articles
+    ]);
      //retourne une reponse http valide
      return new Response('article');
  }
@@ -22,35 +48,39 @@ class ArticleController extends AbstractController
      */
  public function articleShow($id)
  {
-$articles = [
-    '1' => [
-       "title" => "la vaccination c'est genial",
-        "content" => "blablabla",
-        "id" => 1
-    ],
-    '2' => [
-        "title" => "le cheval c'est trop genial",
-        "content" => "blablabla",
-        "id" => 2
-    ],
-    '3' => [
-        "title" => "le cheval c'est nul ",
-        "content" => "blablabla",
-        "id" => 3
-    ]
+     $articles =
+         [
+             '1' =>
+                 [
+                     "title" => "la vaccination c'est genial",
+                     "content" => "blablabla",
+                     "id" => 1
+                 ],
+             '2' =>
+                 [
+                     "title" => "le cheval c'est trop genial",
+                     "content" => "blablabla",
+                     "id" => 2
+                 ],
+             '3' =>
+                 [
+                     "title" => "le cheval c'est nul ",
+                     "content" => "blablabla",
+                     "id" => 3
+                 ]
 
-];
+         ];
+
+     return $this->render('articleshow.html.twig', [
+         'article' => $articles[$id]
+     ]);
+
+//if(array_key_exists($id , $articles)){
 
 
-
-if(array_key_exists($id , $articles)){
-    $article = $articles[$id];
-    $concat = "titre : " . $article['title'] . "<br>" . "contenu : " . $article['content'] . "<br>" . "id : " . $article['id'];
-    return new Response($concat);
-
-}else{
-    return $this->redirectToRoute("home");
-}
+//}else{
+ //   return $this->redirectToRoute("home");
+//}
 
 
 
