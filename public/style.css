@@ -80,6 +80,10 @@ p{
 a{
     width: 50%;
 }
+.nb{
+    color:black;
+    text-align: center;
+}
 
 @media screen and (max-width:1024px){
     .card{

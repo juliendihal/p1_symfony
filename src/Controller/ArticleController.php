@@ -15,26 +15,31 @@ public $articles =
         [
             "title" => "la vaccination c'est genial",
             "content" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            "id" => 1
+            "id" => 1,
+            "published" => true
         ],
         '2' =>
         [
             "title" => "le cheval c'est trop genial",
             "content" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
             "id" => 2,
+            "published" => true
 
         ],
         '3' =>
         [
             "title" => "le cheval c'est nul ",
             "content" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            "id" => 3
+            "id" => 3,
+            "published" => false
+
         ],
         '4' =>
         [
             "title" => "le cheval c'est nul ",
             "content" => "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
-            "id" => 3
+            "id" => 3,
+            "published" => true
         ]
 
     ];
