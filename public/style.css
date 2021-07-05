@@ -79,6 +79,8 @@ p{
 
 a{
     width: 50%;
+    text-decoration: none
+;
 }
 .nb{
     color:black;

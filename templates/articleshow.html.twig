@@ -1,9 +1,19 @@
-{% include 'header.html.twig' %}
+{% extends 'base.html.twig' %}
 
+
+{% block metaTitle %}
+ une autre site symfony avec david
+{% endblock metaTitle %}
+
+{% block textFooter %}
+<h2>wesh la street 2X</h2>
+{% endblock textFooter %}
+
+{% block content %}
 <!-- {//{ placer la variable  }} -->
 <div class="card">
 <h1>{{ article.title }}</h1>
 <p>{{ article.content }}</p>
 <em>{{ article.id }}</em>
 </div>
-{% include 'footer.html.twig' %}
+{% endblock content %}

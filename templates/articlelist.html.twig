@@ -1,6 +1,14 @@
-{% include 'header.html.twig' %}
+{% extends 'base.html.twig' %}
 
+{% block metaTitle %}
+site symfony avec david
+{% endblock metaTitle %}
 
+{% block textFooter %}
+    <p>wesh la street</p>
+{% endblock textFooter %}
+
+{% block content %}
 
 <h1 class="nb"> il ya {{ articles | length }} article dans la base de donnée</h1>
 <div class="container">
@@ -23,4 +31,4 @@
 {% endif %}
 {% endfor %}
 </div>
-{% include 'footer.html.twig' %}
+{% endblock content %}
