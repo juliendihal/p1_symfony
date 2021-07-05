@@ -36,10 +36,13 @@
 
 
         <div class="card">
+            <a href="{{ path('articlshow', {id: article.id}) }}">
             <h1>{{ article.title }}</h1>
             <p>{{ article.content }}</p>
             <em>{{ article.id }}</em>
+            </a>
         </div>
+
 
 
 {% endfor %}
